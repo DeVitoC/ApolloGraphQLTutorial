@@ -2,18 +2,17 @@
 //  AppDelegate.swift
 //  RocketReserver
 //
-//  Created by Christopher DeVito on 3/6/22.
+//  Created by Ellen Shapiro on 11/13/19.
+//  Copyright © 2019 Apollo GraphQL. All rights reserved.
 //
 
 import UIKit
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
         Network.shared.apollo.fetch(query: LaunchesQuery()) { result in
             switch result {
             case .success(let graphQLResult):
